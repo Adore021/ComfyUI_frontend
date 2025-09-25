@@ -133,6 +133,10 @@ const zLogRawResponse = z.object({
 
 const zFeatureFlagsWsMessage = z.record(z.string(), z.any())
 
+const zVariablePreloadedWsMessage = z.object({
+  name: z.string()
+})
+
 export type StatusWsMessageStatus = z.infer<typeof zStatusWsMessageStatus>
 export type StatusWsMessage = z.infer<typeof zStatusWsMessage>
 export type ProgressWsMessage = z.infer<typeof zProgressWsMessage>
@@ -155,6 +159,7 @@ export type DisplayComponentWsMessage = z.infer<
 export type NodeProgressState = z.infer<typeof zNodeProgressState>
 export type ProgressStateWsMessage = z.infer<typeof zProgressStateWsMessage>
 export type FeatureFlagsWsMessage = z.infer<typeof zFeatureFlagsWsMessage>
+export type VariablePreloadedWsMessage = z.infer<typeof zVariablePreloadedWsMessage>
 // End of ws messages
 
 const zPromptInputItem = z.object({

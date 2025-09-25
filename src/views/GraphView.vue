@@ -222,6 +222,11 @@ onMounted(() => {
   api.addEventListener('reconnecting', onReconnecting)
   api.addEventListener('reconnected', onReconnected)
   executionStore.bindExecutionEvents()
+  
+  // Import and bind variable events
+  const { useVariableStore } = await import('@/stores/variableStore')
+  const variableStore = useVariableStore()
+  variableStore.bindVariableEvents()
 
   try {
     init()
@@ -236,6 +241,11 @@ onBeforeUnmount(() => {
   api.removeEventListener('reconnecting', onReconnecting)
   api.removeEventListener('reconnected', onReconnected)
   executionStore.unbindExecutionEvents()
+  
+  // Unbind variable events
+  const { useVariableStore } = await import('@/stores/variableStore')
+  const variableStore = useVariableStore()
+  variableStore.unbindVariableEvents()
 })
 
 useEventListener(window, 'keydown', useKeybindingService().keybindHandler)

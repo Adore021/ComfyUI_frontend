@@ -530,6 +530,7 @@
       "queue": "Queue",
       "nodes": "Nodes",
       "models": "Models",
+      "variables": "Variables",
       "workflows": "Workflows",
       "templates": "Templates"
     },
@@ -556,6 +557,7 @@
       }
     },
     "modelLibrary": "Model Library",
+    "variables": "Variables",
     "downloads": "Downloads",
     "queueTab": {
       "showFlatList": "Show Flat List",
@@ -585,6 +587,32 @@
         "bookmarks": "Bookmarks",
         "open": "Open"
       }
+    }
+  },
+  "variablePanel": {
+    "createVariable": "Create Variable",
+    "createNewVariable": "Create New Variable",
+    "createFirstVariable": "Create First Variable",
+    "variableName": "Variable Name",
+    "variableNamePlaceholder": "e.g., _my_variable_",
+    "variableType": "Variable Type",
+    "value": "Value",
+    "loadingVariables": "Loading variables...",
+    "noVariables": "No variables defined yet. Create your first variable to get started.",
+    "loadedTooltip": "Variable is loaded and ready to use",
+    "deleteConfirmHeader": "Delete Variable",
+    "deleteConfirmMessage": "Are you sure you want to delete variable '{name}'? This action cannot be undone.",
+    "selectCheckpoint": "Select Checkpoint",
+    "selectVAE": "Select VAE",
+    "selectLora": "Select LoRA",
+    "types": {
+      "string": "String",
+      "int": "Integer",
+      "float": "Float",
+      "boolean": "Boolean",
+      "checkpoint": "Checkpoint",
+      "vae": "VAE",
+      "lora": "LoRA"
     }
   },
   "helpCenter": {

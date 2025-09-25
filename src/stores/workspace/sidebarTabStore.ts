@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import { useModelLibrarySidebarTab } from '@/composables/sidebarTabs/useModelLibrarySidebarTab'
 import { useNodeLibrarySidebarTab } from '@/composables/sidebarTabs/useNodeLibrarySidebarTab'
 import { useQueueSidebarTab } from '@/composables/sidebarTabs/useQueueSidebarTab'
+import { useVariablesSidebarTab } from '@/composables/sidebarTabs/useVariablesSidebarTab'
 import { t, te } from '@/i18n'
 import { useWorkflowsSidebarTab } from '@/platform/workflow/management/composables/useWorkflowsSidebarTab'
 import { useCommandStore } from '@/stores/commandStore'
@@ -44,6 +45,7 @@ export const useSidebarTabStore = defineStore('sidebarTab', () => {
         queue: 'menu.queue',
         'node-library': 'sideToolbar.nodeLibrary',
         'model-library': 'sideToolbar.modelLibrary',
+        variables: 'sideToolbar.variables',
         workflows: 'sideToolbar.workflows'
       }
 
@@ -91,6 +93,7 @@ export const useSidebarTabStore = defineStore('sidebarTab', () => {
     registerSidebarTab(useQueueSidebarTab())
     registerSidebarTab(useNodeLibrarySidebarTab())
     registerSidebarTab(useModelLibrarySidebarTab())
+    registerSidebarTab(useVariablesSidebarTab())
     registerSidebarTab(useWorkflowsSidebarTab())
 
     const menuStore = useMenuItemStore()
