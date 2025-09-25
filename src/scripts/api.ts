@@ -39,7 +39,8 @@ import type {
   StatusWsMessageStatus,
   SystemStats,
   User,
-  UserDataFullInfo
+  UserDataFullInfo,
+  VariablePreloadedWsMessage
 } from '@/schemas/apiSchema'
 import type { ComfyNodeDef } from '@/schemas/nodeDefSchema'
 import type { NodeExecutionId } from '@/types/nodeIdentification'
@@ -136,6 +137,7 @@ interface BackendApiCalls {
   progress_state: ProgressStateWsMessage
   display_component: DisplayComponentWsMessage
   feature_flags: FeatureFlagsWsMessage
+  'variable-preloaded': VariablePreloadedWsMessage
 }
 
 /** Dictionary of all api calls */
@@ -547,6 +549,7 @@ export class ComfyApi extends EventTarget {
             case 'promptQueued':
             case 'logs':
             case 'b_preview':
+            case 'variable-preloaded':
               this.dispatchCustomEvent(msg.type, msg.data)
               break
             case 'feature_flags':
